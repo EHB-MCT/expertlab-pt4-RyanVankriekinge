@@ -36,3 +36,6 @@ To fix formatting issues, run: <br>
 
 3. **Finding media screen width breakpoints**  
    Used [Media queries: How to target desktop, tablet and mobile?](https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile) to find ideal breakpoints for different screen sizes, used in assets > *
+
+4. **Creating animated hamburger menu in Vue**  
+   Used [Vue Tutorial: How to make a responsive hamburger menu](https://piboutique.com/vue-tutorial-how-to-make-a-responsive-burger-menu/) to create mobile menu in src > views > App.vue and in src > components > HamburgerMenu.vue

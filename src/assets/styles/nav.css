@@ -1,4 +1,22 @@
 
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .desktop-nav {
+    display: flex;
+    gap: 20px;
+  }
+
+.desktop-nav {
+    display: none;
+  }
+
+.mobile-nav {
+display: none;
+}
 
 /* Screens without hamburger menu */
 @media (min-width:641px)  {
@@ -13,5 +31,13 @@
     nav, li{
         list-style: none;
         margin-left: 20px;
+    }
+
+    .mobile-nav {
+        display: none;
+      }
+
+    .desktop-nav {
+        display: flex;
     }
 }
