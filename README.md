@@ -33,3 +33,6 @@ To fix formatting issues, run: <br>
 
 2. **Initialising Vue project in existing project**  
    Used [How to guide: Adding VueJS to your existing project](https://www.codemotion.com/magazine/frontend/javascript/how-to-guide-adding-vuejs-to-your-existing-project/) to initialise Vue in my existing project
+
+3. **Finding media screen width breakpoints**  
+   Used [Media queries: How to target desktop, tablet and mobile?](https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile) to find ideal breakpoints for different screen sizes, used in assets > *
