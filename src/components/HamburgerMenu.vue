@@ -42,6 +42,10 @@
       outline: 0;
   }
 
+  #burger, button{
+    margin-left: auto;
+  }
+
   .burger-button {
       position: relative;
       height: 30px;
