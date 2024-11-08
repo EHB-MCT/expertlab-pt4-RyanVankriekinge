@@ -52,3 +52,6 @@ To fix formatting issues, run: <br>
 
 6. **Adding a stagger to all list items inside an unordered list**  
    Used [ChatGPT](https://chatgpt.com/share/672de058-d320-8002-9968-b17f2d091bc4) to add a stagger to my mobile menu animation in src > App.vue
+
+7. **Calculating viewportWidth and rootFontSize with JavaScript**  
+   Used [ChatGPT](https://chatgpt.com/share/672e145c-8f94-8002-81ec-acec53bd13d6) to calculate width of specific elements that have padding based on the root font size in src > App.vue

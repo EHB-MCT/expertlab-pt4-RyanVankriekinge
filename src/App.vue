@@ -16,7 +16,11 @@ const toggleMenu = () => {
 
 const beforeEnter = (el) => {
   const listItems = el.querySelectorAll('li')
-  gsap.set(listItems, { x: '-100%' })
+  const viewportWidth = window.innerWidth
+  const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
+  const remValue = 2 * rootFontSize
+  const distance = viewportWidth - remValue
+  gsap.set(listItems, { x: `-${distance}` })
 }
 
 const enter = (el, done) => {
@@ -25,7 +29,7 @@ const enter = (el, done) => {
     x: '0%',
     duration: 0.5,
     ease: 'power2.out',
-    stagger: 0.05,
+    stagger: 0.1,
     onComplete: done,
   })
 }
