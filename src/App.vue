@@ -7,6 +7,8 @@ import HamburgerMenu from './components/HamburgerMenu.vue'
 const menuActive = ref(false)
 const globalOverlay = ref({ active: false })
 
+let enterTween = null
+
 const toggleMenu = () => {
   menuActive.value = !menuActive.value
   globalOverlay.value.active = menuActive.value
@@ -19,8 +21,7 @@ const beforeEnter = (el) => {
 
 const enter = (el, done) => {
   const listItems = el.querySelectorAll('li')
-
-  gsap.to(listItems, {
+  enterTween = gsap.to(listItems, {
     x: '0%',
     duration: 0.5,
     ease: 'power2.out',
@@ -30,14 +31,9 @@ const enter = (el, done) => {
 }
 
 const leave = (el, done) => {
-  const listItems = el.querySelectorAll('li')
-  gsap.to(listItems, {
-    x: '-100%',
-    duration: 0.5,
-    ease: 'power2.in',
-    stagger: 0.05,
-    onComplete: done,
-  })
+  if (enterTween) {
+    enterTween.reverse()
+  }
 }
 </script>
 
