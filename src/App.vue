@@ -1,16 +1,28 @@
 <script setup>
-import { ref } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
-import HamburgerMenu from './components/HamburgerMenu.vue';
+import { ref } from 'vue'
+import { gsap } from 'gsap'
+import { RouterLink, RouterView } from 'vue-router'
+import HamburgerMenu from './components/HamburgerMenu.vue'
 
-const menuActive = ref(false);
-const globalOverlay = ref({ active: false });
+const menuActive = ref(false)
+const globalOverlay = ref({ active: false })
 
 const toggleMenu = () => {
-  menuActive.value = !menuActive.value;
-  globalOverlay.value.active = menuActive.value;
-};
+  menuActive.value = !menuActive.value
+  globalOverlay.value.active = menuActive.value
+}
 
+const beforeEnter = (el) => {
+  gsap.set(el, { x: '-100%' })
+}
+
+const enter = (el, done) => {
+  gsap.to(el, { x: '0%', duration: 0.5, ease: 'power2.out', onComplete: done })
+}
+
+const leave = (el, done) => {
+  gsap.to(el, { x: '-100%', duration: 0.5, ease: 'power2.in', onComplete: done })
+}
 </script>
 
 <template>
@@ -20,12 +32,7 @@ const toggleMenu = () => {
         <HamburgerMenu @toggle-menu="toggleMenu" :active="menuActive" />
         <div v-show="globalOverlay.active" class="global-overlay" @click="toggleMenu"></div>
         <nav>
-          <transition
-            name="menu-slide"
-            @before-enter="beforeEnter"
-            @enter="enter"
-            @leave="leave"
-          >
+          <transition name="menu-slide" @before-enter="beforeEnter" @enter="enter" @leave="leave">
             <ul v-if="menuActive" class="mobile-nav">
               <li><RouterLink to="/">Home</RouterLink></li>
               <li><RouterLink to="/about">More About Me</RouterLink></li>
@@ -46,6 +53,4 @@ const toggleMenu = () => {
   <RouterView />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
