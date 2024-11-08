@@ -1,3 +1,34 @@
+.welcome-text-name {
+  margin-left: 15%;
+  margin-top: 140px;
+}
+
 .welcome-ryan {
   font-size: 30vw;
+  line-height: 0.8;
+}
+
+.welcome-vankriekinge {
+  font-size: 15vw;
+  line-height: 1;
+}
+
+@media (min-width: 641px) {
+  .welcome-ryan {
+    font-size: 200px;
+  }
+
+  .welcome-vankriekinge {
+    font-size: 96px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .welcome-ryan {
+    font-size: 250px;
+  }
+
+  .welcome-vankriekinge {
+    font-size: 120px;
+  }
 }
