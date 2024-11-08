@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { RouterLink, RouterView } from 'vue-router'
 import HamburgerMenu from './components/HamburgerMenu.vue'
@@ -39,6 +39,17 @@ const leave = (el, done) => {
     enterTween.reverse()
   }
 }
+
+onMounted(() => {
+  const desktopNavItems = document.querySelectorAll('.desktop-nav li')
+  gsap.from(desktopNavItems, {
+    opacity: 0,
+    y: -20,
+    duration: 1,
+    ease: 'power2.out',
+    stagger: 0.1,
+  })
+})
 </script>
 
 <template>
