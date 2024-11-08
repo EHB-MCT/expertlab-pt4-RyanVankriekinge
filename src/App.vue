@@ -13,15 +13,31 @@ const toggleMenu = () => {
 }
 
 const beforeEnter = (el) => {
-  gsap.set(el, { x: '-100%' })
+  const listItems = el.querySelectorAll('li')
+  gsap.set(listItems, { x: '-100%' })
 }
 
 const enter = (el, done) => {
-  gsap.to(el, { x: '0%', duration: 0.5, ease: 'power2.out', onComplete: done })
+  const listItems = el.querySelectorAll('li')
+
+  gsap.to(listItems, {
+    x: '0%',
+    duration: 0.5,
+    ease: 'power2.out',
+    stagger: 0.05,
+    onComplete: done,
+  })
 }
 
 const leave = (el, done) => {
-  gsap.to(el, { x: '-100%', duration: 0.5, ease: 'power2.in', onComplete: done })
+  const listItems = el.querySelectorAll('li')
+  gsap.to(listItems, {
+    x: '-100%',
+    duration: 0.5,
+    ease: 'power2.in',
+    stagger: 0.05,
+    onComplete: done,
+  })
 }
 </script>
 
