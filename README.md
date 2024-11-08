@@ -47,5 +47,8 @@ To fix formatting issues, run: <br>
 4. **Creating animated hamburger menu in Vue**  
    Used [Vue Tutorial: How to make a responsive hamburger menu](https://piboutique.com/vue-tutorial-how-to-make-a-responsive-burger-menu/) to create mobile menu in src > views > App.vue and in src > components > HamburgerMenu.vue
 
-5. **Adding a stagger to all list items inside an unordered list**  
+5. **Using transitions in Vue**  
+   Used [Vue.js 3 GreenSock (GSAP) Animating Tutorial](https://www.koderhq.com/tutorial/vue/animation-greensock-gsap/) to use GSAP animations in Vue, in src > \*
+
+6. **Adding a stagger to all list items inside an unordered list**  
    Used [ChatGPT](https://chatgpt.com/share/672de058-d320-8002-9968-b17f2d091bc4) to add a stagger to my mobile menu animation in src > App.vue
