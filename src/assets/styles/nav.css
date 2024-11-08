@@ -17,6 +17,10 @@ nav a {
   list-style: none;
   margin-top: 15px;
   padding: 10px 10px;
+  position: fixed;
+  top: 30;
+  right: 2rem;
+  width: 100%;
 }
 
 .mobile-nav li {

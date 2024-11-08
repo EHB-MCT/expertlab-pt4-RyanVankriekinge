@@ -18,7 +18,7 @@ const beforeEnter = (el) => {
   const listItems = el.querySelectorAll('li')
   const viewportWidth = window.innerWidth
   const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
-  const remValue = 2 * rootFontSize
+  const remValue = rootFontSize
   const distance = viewportWidth - remValue
   gsap.set(listItems, { x: `-${distance}` })
 }
@@ -47,6 +47,7 @@ onMounted(() => {
     y: -20,
     duration: 1,
     ease: 'power2.out',
+    delay: 0.5,
     stagger: 0.1,
   })
 })
