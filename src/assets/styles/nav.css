@@ -1,0 +1,57 @@
+nav {
+  color: white;
+}
+
+nav a {
+  font-family: 'Agency FB', sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 0px;
+  list-style: none;
+  margin-top: 15px;
+  padding: 10px 10px;
+}
+
+.mobile-nav li {
+  display: flex;
+  justify-content: end;
+}
+
+.desktop-nav {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+  width: 100%;
+}
+
+.desktop-nav,
+ul {
+  margin-left: auto;
+}
+
+.desktop-nav,
+li {
+  list-style: none;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+/* Screens without hamburger menu */
+@media (min-width: 641px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+}

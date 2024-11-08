@@ -1,0 +1,52 @@
+@import './base.css';
+@import './nav.css';
+
+/* Font imports */
+@import url('https://fonts.cdnfonts.com/css/agency-fb');
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a {
+  padding: 3px;
+}
+
+.outer-wrapper {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 641px) {
+  #app {
+    padding: 2rem 6rem;
+  }
+
+  .wrapper {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .outer-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wrapper {
+    width: 1000px;
+  }
+}
