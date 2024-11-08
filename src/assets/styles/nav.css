@@ -16,8 +16,12 @@ nav a {
   margin-left: 0px;
   list-style: none;
   margin-top: 15px;
-  background-color: rgb(0, 0, 0);
   padding: 10px 10px;
+}
+
+.mobile-nav li {
+  display: flex;
+  justify-content: end;
 }
 
 .desktop-nav {
