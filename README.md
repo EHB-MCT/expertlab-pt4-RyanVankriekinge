@@ -56,5 +56,8 @@ To fix formatting issues, run: <br>
 7. **Calculating viewportWidth and rootFontSize with JavaScript**  
    Used [ChatGPT](https://chatgpt.com/share/672e145c-8f94-8002-81ec-acec53bd13d6) to calculate width of specific elements that have padding based on the root font size in src > App.vue
 
-8. **Calculating viewportWidth and rootFontSize with JavaScript**  
-   [How TO - CSS Shapes](https://www.w3schools.com/howto/howto_css_shapes.asp) to create shapes in css for my background elements in src > views > \*
+8. **Creating SVG Shapes**  
+   Used [SVG <polygon> - W3 Schools](https://www.w3schools.com/graphics/svg_polygon.asp) to create SVG shapes for my background elements in src > views > \*
+
+9. **Creating SVG Shapes**  
+   Used [How to make polygon in svg responsive (vw, vh) - stackoverflow](https://stackoverflow.com/questions/69175636/how-to-make-polygon-in-svg-responsive-vw-vh) to make my svg shapes responsive
