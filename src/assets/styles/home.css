@@ -17,25 +17,25 @@
 }
 
 .welcome-ryan {
-  font-size: 40vw;
+  font-size: 30vw;
   line-height: 0.8;
   z-index: 1;
   margin-top: 100px;
 }
 
 .welcome-vankriekinge {
-  font-size: 17vw;
+  font-size: 14vw;
   line-height: 1;
   z-index: 1;
 }
 
 .name-svg {
   position: absolute;
-  top: 0px;
+  top: 20px;
   left: 0;
   z-index: -99;
   width: 100vw;
-  height: 32vw;
+  height: 27vh;
   overflow: visible;
 }
 
@@ -68,7 +68,7 @@
 
 @media (min-width: 375px) {
   .name-svg {
-    height: 40vh;
+    height: 35vh;
   }
   .welcome-text-career {
     top: 40%;
@@ -103,7 +103,7 @@
 
 @media (min-width: 1025px) {
   .name-svg {
-    height: 55vh;
+    height: 50vh;
     left: -10vw;
   }
   .welcome-text-name {

@@ -1,4 +1,20 @@
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+
+onMounted(() => {
+  gsap.from('.name-svg', {
+    x: '100vw',
+    duration: 1.5,
+    ease: 'power3.out',
+  })
+  gsap.from('.function-svg', {
+    x: '-100vw',
+    duration: 1.5,
+    ease: 'power3.out',
+  })
+})
+</script>
 
 <template>
   <main>
