@@ -1,5 +1,5 @@
 .welcome-text-name {
-  margin-left: 15%;
+  margin-left: 20%;
   margin-top: 140px;
 }
 
@@ -24,6 +24,9 @@
 }
 
 @media (min-width: 1025px) {
+  .welcome-text-name {
+    margin-left: 30%;
+  }
   .welcome-ryan {
     font-size: 250px;
   }
