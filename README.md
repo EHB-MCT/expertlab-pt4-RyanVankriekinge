@@ -55,3 +55,6 @@ To fix formatting issues, run: <br>
 
 7. **Calculating viewportWidth and rootFontSize with JavaScript**  
    Used [ChatGPT](https://chatgpt.com/share/672e145c-8f94-8002-81ec-acec53bd13d6) to calculate width of specific elements that have padding based on the root font size in src > App.vue
+
+8. **Calculating viewportWidth and rootFontSize with JavaScript**  
+   [How TO - CSS Shapes](https://www.w3schools.com/howto/howto_css_shapes.asp) to create shapes in css for my background elements in src > views > \*
