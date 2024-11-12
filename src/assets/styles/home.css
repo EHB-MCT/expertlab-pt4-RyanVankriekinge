@@ -6,7 +6,7 @@
 
 .welcome-text-namegroup {
   position: relative;
-  max-height: 50vh;
+  max-height: 400px;
 }
 
 .welcome-text-name {
@@ -73,6 +73,9 @@
   .welcome-text-career {
     top: 40%;
   }
+  .jobtitle {
+    font-size: 40px;
+  }
 }
 
 @media (min-width: 641px) {
@@ -96,7 +99,7 @@
   }
 
   .jobtitle {
-    font-size: 40px;
+    font-size: 65px;
     margin-top: 15px;
   }
 }
@@ -122,7 +125,7 @@
   }
 
   .jobtitle {
-    margin-top: 0px;
-    font-size: 60px;
+    margin-top: 20px;
+    font-size: 80px;
   }
 }
