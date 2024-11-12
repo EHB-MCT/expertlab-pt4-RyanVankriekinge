@@ -17,11 +17,27 @@ nav a {
   list-style: none;
   margin-top: 15px;
   padding: 10px 10px;
+  position: fixed;
+  top: 30;
+  right: 2rem;
+  width: 100%;
+  z-index: 1000;
 }
 
 .mobile-nav li {
   display: flex;
   justify-content: end;
+}
+
+.global-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: block;
 }
 
 .desktop-nav {
