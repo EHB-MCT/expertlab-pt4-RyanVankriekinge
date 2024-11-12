@@ -3,16 +3,40 @@ import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 
 onMounted(() => {
-  gsap.from('.name-svg', {
+  const tl = gsap.timeline()
+
+  tl.from('.name-svg', {
     x: '100vw',
     duration: 1.5,
     ease: 'power3.out',
   })
-  gsap.from('.function-svg', {
-    x: '-100vw',
-    duration: 1.5,
-    ease: 'power3.out',
-  })
+    .to({}, { duration: 0.5 })
+    .from('.welcome-text-name', {
+      x: '20vw',
+      opacity: 0,
+      duration: 1.5,
+      ease: 'power3.out',
+    })
+    .to({}, { duration: 0.5 })
+    .from(
+      '.function-svg',
+      {
+        x: '-100vw',
+        duration: 1.5,
+        ease: 'power3.out',
+      },
+      '-=1.5',
+    )
+    .from(
+      '.jobtitle',
+      {
+        x: '-20vw',
+        opacity: 0,
+        duration: 1.5,
+        ease: 'power3.out',
+      },
+      '-=1.5',
+    )
 })
 </script>
 
