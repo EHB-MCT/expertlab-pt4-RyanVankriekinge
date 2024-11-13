@@ -71,6 +71,9 @@
 <script setup>
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   const tl = gsap.timeline()
@@ -95,5 +98,46 @@ onMounted(() => {
       ease: 'power3.out',
       stagger: 0,
     })
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-about-me',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+    .to('.welcome-text-namegroup', {
+      x: '100vw',
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .to(
+      '.welcome-text-career',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      },
+      '-=0.5',
+    )
 })
 </script>
+
+<style scoped>
+.welcome-text-namegroup,
+.welcome-text-career {
+  position: relative;
+}
+
+.welcome-text-namegroup {
+  left: 0;
+}
+
+.welcome-text-career {
+  right: 0;
+}
+</style>
