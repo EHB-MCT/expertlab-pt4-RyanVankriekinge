@@ -84,6 +84,7 @@ onMounted(() => {
               audience. With my drive and eagerness to learn, I am convinced that I can be a
               valuable addition to any team.
             </p>
+            <button class="button-small">More about me</button>
           </div>
           <div class="about-me-image">
             <img src="../assets/img/ryanvankriekinge.png" />

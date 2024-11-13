@@ -38,6 +38,16 @@ p {
   font-size: 16px;
 }
 
+.button-small {
+  background-color: #57378b;
+  color: white;
+  font-family: 'Agency FB', sans-serif;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  width: 130px;
+  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+  text-align: left;
 }
 
 @media (hover: hover) {
