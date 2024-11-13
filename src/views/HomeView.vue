@@ -1,33 +1,3 @@
-<script setup>
-import { onMounted } from 'vue'
-import { gsap } from 'gsap'
-
-onMounted(() => {
-  const tl = gsap.timeline()
-
-  tl.from('.name-svg', {
-    x: '100vw',
-    duration: 1.5,
-    ease: 'power3.out',
-  })
-    .to({}, {})
-    .from('.welcome-text-name', {
-      x: '20vw',
-      opacity: 0,
-      duration: 1.5,
-      ease: 'power3.out',
-    })
-    .to({}, { duration: 0.5 })
-    .from(['.function-svg', '.jobtitle'], {
-      x: '-100vw',
-      opacity: 0,
-      duration: 1.5,
-      ease: 'power3.out',
-      stagger: 0,
-    })
-})
-</script>
-
 <template>
   <main>
     <div class="outer-wrapper">
@@ -97,3 +67,33 @@ onMounted(() => {
     </div>
   </main>
 </template>
+
+<script setup>
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+
+onMounted(() => {
+  const tl = gsap.timeline()
+
+  tl.from('.name-svg', {
+    x: '100vw',
+    duration: 1.5,
+    ease: 'power3.out',
+  })
+    .to({}, {})
+    .from('.welcome-text-name', {
+      x: '20vw',
+      opacity: 0,
+      duration: 1.5,
+      ease: 'power3.out',
+    })
+    .to({}, { duration: 0.5 })
+    .from(['.function-svg', '.jobtitle'], {
+      x: '-100vw',
+      opacity: 0,
+      duration: 1.5,
+      ease: 'power3.out',
+      stagger: 0,
+    })
+})
+</script>
