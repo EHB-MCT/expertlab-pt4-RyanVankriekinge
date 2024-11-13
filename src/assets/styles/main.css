@@ -27,6 +27,17 @@ header {
 
 .title {
   font-family: 'Bebas Neue', sans-serif;
+  color: white;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 16px;
+}
+
 }
 
 @media (hover: hover) {

@@ -66,6 +66,21 @@
   color: white;
 }
 
+.section-about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-me-image {
+  width: 100%;
+}
+
+.about-me-image img {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 @media (min-width: 375px) {
   .name-svg {
     height: 35vh;
