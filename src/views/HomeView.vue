@@ -42,8 +42,8 @@ onMounted(() => {
               class="name-svg"
               viewBox="0 0 100 100"
               xmlns="http://www.w3.org/2000/svg"
-              width="100vw"
-              height="auto"
+              width="100%"
+              height="100%"
             >
               <polygon points="50,10 0,75 500,75 500,10" fill="#57378B" />
             </svg>
@@ -55,9 +55,9 @@ onMounted(() => {
                 viewBox="0 0 100 100"
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
-                height="auto"
+                height="100%"
               >
-                <polygon points="-500,0 -500,35 85,35 70,0" fill="#57378B" />
+                <polygon points="-500,0 -500,35 20,35 0,0" fill="#57378B" />
               </svg>
               <p class="jobtitle">Portfolio</p>
             </div>
@@ -86,8 +86,11 @@ onMounted(() => {
             </p>
             <button class="button-small">More about me</button>
           </div>
-          <div class="about-me-image">
-            <img src="../assets/img/ryanvankriekinge.png" />
+          <div class="about-me-image-group">
+            <div class="about-me-image-container">
+              <img src="../assets/img/ryanvankriekinge.png" />
+            </div>
+            <div class="about-me-shape"></div>
           </div>
         </div>
       </div>

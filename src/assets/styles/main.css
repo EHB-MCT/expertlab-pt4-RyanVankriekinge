@@ -9,8 +9,9 @@
 #app {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 10vw;
   font-weight: normal;
+  overflow: hidden;
 }
 
 a {
@@ -28,6 +29,7 @@ header {
 .title {
   font-family: 'Bebas Neue', sans-serif;
   color: white;
+  text-align: center;
 }
 
 h2 {
@@ -36,18 +38,26 @@ h2 {
 
 p {
   font-size: 16px;
+  text-align: center;
 }
 
 .button-small {
   background-color: #57378b;
   color: white;
   font-family: 'Agency FB', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   border: none;
-  padding: 10px;
-  width: 130px;
+  padding: 12px;
+  width: 160px;
   clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
   text-align: left;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+.button-small:hover {
+  background-color: #8a75ad;
 }
 
 @media (hover: hover) {
@@ -67,6 +77,15 @@ p {
 }
 
 @media (min-width: 1025px) {
+  .button-small {
+    margin: 0px;
+  }
+  p {
+    text-align: left;
+  }
+  .title {
+    text-align: left;
+  }
   .outer-wrapper {
     width: 100%;
     display: flex;
