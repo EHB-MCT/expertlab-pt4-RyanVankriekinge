@@ -78,7 +78,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   const tl = gsap.timeline()
-
+  // initial animation welcome section
   tl.from('.name-svg', {
     x: '100vw',
     duration: 1.5,
@@ -100,6 +100,36 @@ onMounted(() => {
       stagger: 0,
     })
 
+  // scroll triggered animations
+
+  // welcome section
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-about-me',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.5,
+      },
+    })
+    .to('.welcome-text-namegroup', {
+      x: '100vw',
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .to(
+      '.welcome-text-career',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      },
+      0.2,
+    )
+
+  //about-me-section
   gsap
     .timeline({
       scrollTrigger: {
@@ -109,13 +139,7 @@ onMounted(() => {
         scrub: 1,
       },
     })
-    .from('.about-me-image-container', {
-      x: '100vw',
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-    })
-    .from('.about-me-shape', {
+    .from('.about-me-image-group', {
       x: '100vw',
       opacity: 0,
       duration: 1,
@@ -138,30 +162,26 @@ onMounted(() => {
       ease: 'power3.out',
     })
 
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-about-me',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1,
-      },
-    })
-    .to('.welcome-text-namegroup', {
-      x: '100vw',
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-    })
-    .to(
-      '.welcome-text-career',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-      },
-      '-=1',
-    )
+  //   gsap
+  //     .timeline({
+  //       scrollTrigger: {
+  //         trigger: '.section-about-me',
+  //         start: 'bottom 80%',
+  //         end: 'bottom+=100% top',
+  //         scrub: 1,
+  //       },
+  //     })
+  //     .to('.about-me-description', {
+  //       x: '-100vw',
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: 'power3.in',
+  //     })
+  //     .to('.about-me-image-group', {
+  //       x: '100vw',
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: 'power3.in',
+  //     })
 })
 </script>
