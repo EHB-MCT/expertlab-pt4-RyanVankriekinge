@@ -157,24 +157,15 @@ onMounted(() => {
       0,
     )
     .from(
-      '.about-me-image-container',
+      '.about-me-image-group > *',
       {
         x: '100vw',
         opacity: 0,
         duration: 1,
         ease: 'power3.out',
+        stagger: 1,
       },
       0,
-    )
-    .from(
-      '.about-me-shape',
-      {
-        x: '100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-      },
-      0.5,
     )
 
   // about-me-section : exit animation
