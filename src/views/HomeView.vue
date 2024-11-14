@@ -106,8 +106,8 @@ onMounted(() => {
   gsap
     .timeline({
       scrollTrigger: {
-        trigger: '.section-about-me',
-        start: 'top bottom',
+        trigger: '.section-welcome',
+        start: 'bottom 80%',
         end: 'bottom top',
         scrub: 0.5,
       },
@@ -129,18 +129,18 @@ onMounted(() => {
       0.2,
     )
 
-  //about-me-section
+  //about-me-section : enter animation
   gsap
     .timeline({
       scrollTrigger: {
         trigger: '.section-about-me',
         start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1,
+        end: 'top 20%',
+        scrub: 0.5,
       },
     })
-    .from('.about-me-image-group', {
-      x: '100vw',
+    .from('.about-me-title', {
+      x: '-100vw',
       opacity: 0,
       duration: 1,
       ease: 'power3.out',
@@ -152,8 +152,9 @@ onMounted(() => {
         opacity: 0,
         duration: 1,
         ease: 'power3.out',
+        stagger: 0.2,
       },
-      '-=2',
+      0,
     )
     .from('.about-me-title', {
       x: '-100vw',
