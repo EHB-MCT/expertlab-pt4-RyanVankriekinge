@@ -63,6 +63,7 @@
             <div class="about-me-shape"></div>
           </div>
         </div>
+        <div style="height: 100vh"></div>
       </div>
     </div>
   </main>
@@ -105,7 +106,45 @@ onMounted(() => {
         trigger: '.section-about-me',
         start: 'top bottom',
         end: 'bottom top',
-        scrub: true,
+        scrub: 1,
+      },
+    })
+    .from('.about-me-image-container', {
+      x: '100vw',
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .from('.about-me-shape', {
+      x: '100vw',
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .from(
+      '.about-me-description',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      },
+      '-=2',
+    )
+    .from('.about-me-title', {
+      x: '-100vw',
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-about-me',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
       },
     })
     .to('.welcome-text-namegroup', {
@@ -122,22 +161,7 @@ onMounted(() => {
         duration: 1,
         ease: 'power3.out',
       },
-      '-=0.5',
+      '-=1',
     )
 })
 </script>
-
-<style scoped>
-.welcome-text-namegroup,
-.welcome-text-career {
-  position: relative;
-}
-
-.welcome-text-namegroup {
-  left: 0;
-}
-
-.welcome-text-career {
-  right: 0;
-}
-</style>
