@@ -163,7 +163,7 @@ onMounted(() => {
         opacity: 0,
         duration: 1,
         ease: 'power3.out',
-        stagger: 1,
+        stagger: 0.4,
       },
       0,
     )
@@ -191,12 +191,13 @@ onMounted(() => {
       0,
     )
     .to(
-      '.about-me-image-group',
+      '.about-me-image-group > *',
       {
         x: '100vw',
         opacity: 0,
         duration: 1,
         ease: 'power3.in',
+        stagger: 0.4,
       },
       0,
     )
