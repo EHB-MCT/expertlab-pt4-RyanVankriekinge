@@ -63,6 +63,7 @@
             <div class="about-me-shape"></div>
           </div>
         </div>
+        <div style="height: 100vh"></div>
       </div>
     </div>
   </main>
@@ -71,10 +72,13 @@
 <script setup>
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   const tl = gsap.timeline()
-
+  // initial animation welcome section
   tl.from('.name-svg', {
     x: '100vw',
     duration: 1.5,
@@ -95,5 +99,107 @@ onMounted(() => {
       ease: 'power3.out',
       stagger: 0,
     })
+
+  // scroll triggered animations
+
+  // welcome section
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-welcome',
+        start: 'bottom 80%',
+        end: 'bottom top',
+        scrub: 0.5,
+      },
+    })
+    .to('.welcome-text-namegroup', {
+      x: '100vw',
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .to(
+      '.welcome-text-career',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      },
+      0.2,
+    )
+
+  //about-me-section : enter animation
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-about-me',
+        start: 'top bottom',
+        end: 'top 20%',
+        scrub: 0.5,
+      },
+    })
+    .from('.about-me-title', {
+      x: '-100vw',
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .from(
+      '.about-me-description > *',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.2,
+      },
+      0,
+    )
+    .from(
+      '.about-me-image-group > *',
+      {
+        x: '100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.4,
+      },
+      0,
+    )
+
+  // about-me-section : exit animation
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-about-me',
+        start: 'bottom 80%',
+        end: 'bottom-=20% top',
+        scrub: 1,
+      },
+    })
+    .to(
+      '.about-me-description > *',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.in',
+        stagger: 0.2,
+      },
+      0,
+    )
+    .to(
+      '.about-me-image-group > *',
+      {
+        x: '100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.in',
+        stagger: 0.4,
+      },
+      0,
+    )
 })
 </script>
