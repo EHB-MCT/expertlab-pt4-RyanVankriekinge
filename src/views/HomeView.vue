@@ -146,7 +146,7 @@ onMounted(() => {
       ease: 'power3.out',
     })
     .from(
-      '.about-me-description',
+      '.about-me-description > *',
       {
         x: '-100vw',
         opacity: 0,
@@ -174,7 +174,7 @@ onMounted(() => {
         duration: 1,
         ease: 'power3.out',
       },
-      0.2,
+      0.5,
     )
 
   // about-me-section : exit animation
@@ -189,12 +189,13 @@ onMounted(() => {
       },
     })
     .to(
-      '.about-me-description',
+      '.about-me-description > *',
       {
         x: '-100vw',
         opacity: 0,
         duration: 1,
         ease: 'power3.in',
+        stagger: 0.2,
       },
       0,
     )
