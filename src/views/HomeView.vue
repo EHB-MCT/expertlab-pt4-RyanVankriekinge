@@ -179,26 +179,34 @@ onMounted(() => {
 
   // about-me-section : exit animation
 
-  //   gsap
-  //     .timeline({
-  //       scrollTrigger: {
-  //         trigger: '.section-about-me',
-  //         start: 'bottom 80%',
-  //         end: 'bottom+=100% top',
-  //         scrub: 1,
-  //       },
-  //     })
-  //     .to('.about-me-description', {
-  //       x: '-100vw',
-  //       opacity: 0,
-  //       duration: 1,
-  //       ease: 'power3.in',
-  //     })
-  //     .to('.about-me-image-group', {
-  //       x: '100vw',
-  //       opacity: 0,
-  //       duration: 1,
-  //       ease: 'power3.in',
-  //     })
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-about-me',
+        start: 'bottom 80%',
+        end: 'bottom-=20% top',
+        scrub: 1,
+      },
+    })
+    .to(
+      '.about-me-description',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.in',
+      },
+      0,
+    )
+    .to(
+      '.about-me-image-group',
+      {
+        x: '100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.in',
+      },
+      0,
+    )
 })
 </script>
