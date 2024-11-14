@@ -61,3 +61,9 @@ To fix formatting issues, run: <br>
 
 9. **Creating SVG Shapes**  
    Used [How to make polygon in svg responsive (vw, vh) - stackoverflow](https://stackoverflow.com/questions/69175636/how-to-make-polygon-in-svg-responsive-vw-vh) to make my svg shapes responsive
+
+10. **Creating Scroll triggered animations**  
+    Used [ScrollTrigger - GSAP](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1) to make items appear and disappear when scrolling in src > views > \*
+
+11. **Adding stagger to all elements of a section**  
+    Used [ChatGPT](https://chatgpt.com/share/6735d162-9c10-8002-8963-ae1732fc5a18) to create efficient staggers on child elements of a div element in src > views > HomeView.vue
