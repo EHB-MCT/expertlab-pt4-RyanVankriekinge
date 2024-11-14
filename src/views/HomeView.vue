@@ -156,12 +156,28 @@ onMounted(() => {
       },
       0,
     )
-    .from('.about-me-title', {
-      x: '-100vw',
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-    })
+    .from(
+      '.about-me-image-container',
+      {
+        x: '100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      },
+      0,
+    )
+    .from(
+      '.about-me-shape',
+      {
+        x: '100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      },
+      0.2,
+    )
+
+  // about-me-section : exit animation
 
   //   gsap
   //     .timeline({
