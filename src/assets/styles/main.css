@@ -38,6 +38,7 @@ h2 {
 
 p {
   font-size: 16px;
+  font-family: 'Agency FB', sans-serif;
   text-align: center;
 }
 
@@ -58,12 +59,6 @@ p {
 
 .button-small:hover {
   background-color: #8a75ad;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
 }
 
 @media (min-width: 641px) {

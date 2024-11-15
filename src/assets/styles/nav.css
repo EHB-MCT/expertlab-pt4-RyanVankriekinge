@@ -46,6 +46,7 @@ nav a {
   justify-content: end;
   gap: 30px;
   width: 100%;
+  display: none;
 }
 
 .desktop-nav,
@@ -58,22 +59,31 @@ li {
   list-style: none;
 }
 
-.desktop-nav {
-  display: none;
+.desktop-nav a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 /* Screens without hamburger menu */
 @media (min-width: 641px) {
   .mobile-nav {
     display: none;
+    background-size: 100% 0.1em;
   }
 
   .desktop-nav {
     display: flex;
   }
 
-  .desktop-nav a:hover {
-    text-decoration: underline;
-    background-color: inherit;
+  .desktop-nav a:hover::before {
+    transform: scaleX(1);
   }
 }
