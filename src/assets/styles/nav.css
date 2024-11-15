@@ -71,4 +71,9 @@ li {
   .desktop-nav {
     display: flex;
   }
+
+  .desktop-nav a:hover {
+    text-decoration: underline;
+    background-color: inherit;
+  }
 }
