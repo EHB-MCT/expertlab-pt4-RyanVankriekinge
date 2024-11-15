@@ -67,3 +67,6 @@ To fix formatting issues, run: <br>
 
 11. **Adding stagger to all elements of a section**  
     Used [ChatGPT](https://chatgpt.com/share/6735d162-9c10-8002-8963-ae1732fc5a18) to create efficient staggers on child elements of a div element in src > views > HomeView.vue
+
+12. **Animating link underlines when hovering over navigation**  
+    Used [Animating Link Underlines](https://tobiasahlin.com/blog/css-trick-animating-link-underlines/) to add animation to navigation links when hovering in src > assets > styles > nav.css
