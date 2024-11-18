@@ -70,3 +70,9 @@ To fix formatting issues, run: <br>
 
 12. **Animating link underlines when hovering over navigation**  
     Used [Animating Link Underlines](https://tobiasahlin.com/blog/css-trick-animating-link-underlines/) to add animation to navigation links when hovering in src > assets > styles > nav.css
+
+13. **Adding page transitions on router components**  
+    Used [Vue Router: Transitions](https://router.vuejs.org/guide/advanced/transitions) to animate page navigations in single page web page in src > App.vue
+
+14. **Examples Vue Router transitions**  
+    Used [Awesome examples of Vue Router Transitions](https://learnvue.co/articles/vue-router-transitions) to create my own transition in src > assets > styles > pagetransitions.css
