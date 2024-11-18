@@ -1,6 +1,7 @@
 @import './base.css';
 @import './nav.css';
 @import './home.css';
+@import './pagetransitions.css';
 
 /* Font imports */
 @import url('https://fonts.cdnfonts.com/css/agency-fb');
