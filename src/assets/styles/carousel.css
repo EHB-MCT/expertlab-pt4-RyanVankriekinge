@@ -16,3 +16,7 @@
 .media{
     max-width: 500px !important;
 }
+
+.carousel__viewport{
+    overflow: visible !important;
+}
