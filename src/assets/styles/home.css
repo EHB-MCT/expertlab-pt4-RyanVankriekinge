@@ -124,10 +124,16 @@ svg {
 .section-works{
   height: 90vh;
   display: flex;
+  flex-direction: column;
 }
 
 .section-works *{
   margin: auto;
+}
+
+.works-container h2{
+  margin: auto;
+  width: 100%;
 }
 
 @media (min-width: 375px) {
