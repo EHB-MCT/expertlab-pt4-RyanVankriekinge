@@ -76,3 +76,6 @@ To fix formatting issues, run: <br>
 
 14. **Examples Vue Router transitions**  
     Used [Awesome examples of Vue Router Transitions](https://learnvue.co/articles/vue-router-transitions) to create my own transition in src > assets > styles > pagetransitions.css
+
+15. **Vue3 Carousel**  
+    Used [Vue3-carousel: For your next awesome project](https://vue3-carousel.ismail9k.com/) to create a carousel for my works in src > components > WorksCarousel.vue
