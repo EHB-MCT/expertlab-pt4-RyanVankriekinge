@@ -63,7 +63,13 @@
             <div class="about-me-shape"></div>
           </div>
         </div>
-        <div style="height: 100vh"></div>
+        <div class="section-works">
+          <div class="works-container">
+            <h2 class="title">My works</h2>
+            <WorksCarousel></WorksCarousel>
+            <button class="button-small" style="margin: auto; width: 140px;">All my works</button>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -73,6 +79,7 @@
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import WorksCarousel from '@/components/WorksCarousel.vue';
 
 gsap.registerPlugin(ScrollTrigger)
 

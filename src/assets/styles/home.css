@@ -121,6 +121,26 @@ svg {
   justify-content: center;
 }
 
+.section-works{
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.section-works *{
+  margin: auto;
+}
+
+.works-container{
+  width: 100%;
+}
+
+.works-container h2{
+  margin: auto;
+  text-align: center !important;
+}
+
 @media (min-width: 375px) {
   .name-svg {
     height: 85%;
