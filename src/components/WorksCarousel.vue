@@ -50,7 +50,7 @@ const config = {
           <video v-else-if="item.type === 'video'" :src="item.media" controls />
         </div>
         <div class="text">
-          <h3>{{ item.title }}</h3>
+          <h2>{{ item.title }}</h2>
           <p>{{ item.description }}</p>
         </div>
       </div>
@@ -85,16 +85,5 @@ const config = {
 
 .text {
   text-align: center;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-p {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 0;
 }
 </style>
