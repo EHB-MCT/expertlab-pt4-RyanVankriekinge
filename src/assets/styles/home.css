@@ -138,6 +138,7 @@ svg {
 
 .works-container h2{
   margin: auto;
+  text-align: center !important;
 }
 
 @media (min-width: 375px) {
