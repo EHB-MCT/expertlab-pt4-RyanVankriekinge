@@ -50,7 +50,7 @@ const config = {
           <video v-else-if="item.type === 'video'" :src="item.media" controls />
         </div>
         <div class="text">
-          <h2>{{ item.title }}</h2>
+          <h3>{{ item.title }}</h3>
           <p>{{ item.description }}</p>
         </div>
       </div>

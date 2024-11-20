@@ -64,7 +64,10 @@
           </div>
         </div>
         <div class="section-works">
-          <WorksCarousel></WorksCarousel>
+          <div class="works-container">
+            <h2 class="title">My works</h2>
+            <WorksCarousel></WorksCarousel>
+          </div>
         </div>
       </div>
     </div>
