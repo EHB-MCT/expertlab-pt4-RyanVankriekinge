@@ -36,8 +36,9 @@ const items = [
 ];
 
 const config = {
-  itemsToShow: 2.5,
+  itemsToShow: 1.5,
   wrapAround: true,
+  centerMode: true,
 };
 </script>
 

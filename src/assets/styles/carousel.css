@@ -1,23 +1,39 @@
 .carousel__icon{
     display: none;
+    fill: white !important;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    width: 100% !important;
+    height: 100% !important;
 }
 
-.carousel__slide{
-    height: fit-content;
-    width: 50vw !important;
-    max-width: 600px;
-    padding: 40px 0px;
+.carousel__next, .carousel__prev{
+    width: 60px !important;
+    height: 60px !important;
 }
 
-.carousel__item{
-    width: 100%;
-    height: fit-content;
+.carousel__slides {
+    display: flex;
+    justify-content: center;
 }
-
-.media{
-    max-width: 500px !important;
+  
+.carousel__item {
+    flex: 0 0 90%; 
+    margin: 0 10px;
+}
+  
+.carousel__item .media {
+    width: 100% !important; 
+    height: auto;
+    max-width: 90% !important;
 }
 
 .carousel__viewport{
+    margin: 30px 0px;
     overflow: visible !important;
+}
+
+@media (min-width: 641px) {
+    .carousel__icon{
+        display: flex;
+    }
 }
