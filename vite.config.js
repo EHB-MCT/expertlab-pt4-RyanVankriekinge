@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'expertlab-pt3-RyanVankriekinge',
+  base: 'expertlab-pt4-RyanVankriekinge',
   plugins: [vue()],
   resolve: {
     alias: {
