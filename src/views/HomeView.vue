@@ -202,5 +202,49 @@ onMounted(() => {
       },
       0,
     )
+
+    // works section: enter animation
+    gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-works',
+        start: 'top 70%',
+        end: 'top top',
+        scrub: 0.5,
+      },
+    })
+    .from(
+      '.works-container > *',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 1,
+      },
+      0,
+    )
+
+    // works section: exit animation
+    gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.section-works',
+        start: 'bottom top',
+        end: 'bottom-=20% top',
+        scrub: 0.5,
+      },
+    })
+    .from(
+      '.works-container > *',
+      {
+        x: '-100vw',
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 1,
+      },
+      0,
+    )
 })
 </script>

@@ -3,10 +3,19 @@
 @import './home.css';
 @import './pagetransitions.css';
 @import './carousel.css';
+@import './footer.css';
 
 /* Font imports */
 @import url('https://fonts.cdnfonts.com/css/agency-fb');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+#app{
+  height: fit-content;
+}
+
+main{
+  height: fit-content;
+}
 
 #app {
   width: 100%;
@@ -22,6 +31,7 @@ a {
 
 .outer-wrapper {
   width: 100%;
+  height: fit-content;
 }
 
 header {
