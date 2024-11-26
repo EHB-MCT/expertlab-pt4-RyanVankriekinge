@@ -85,9 +85,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   const tl = gsap.timeline()
-  // initial animation welcome section
   tl.from('.name-svg', {
-    x: '100vw',
+    x: '50vw',
+    opacity: 0,
     duration: 1.5,
     ease: 'power3.out',
   })
@@ -100,151 +100,37 @@ onMounted(() => {
     })
     .to({}, { duration: 0.5 })
     .from(['.function-svg', '.jobtitle'], {
-      x: '-100vw',
+      x: '-50vw',
       opacity: 0,
       duration: 1.5,
       ease: 'power3.out',
       stagger: 0,
     })
-
-  // scroll triggered animations
-
-  // welcome section
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-welcome',
-        start: 'bottom 80%',
-        end: 'bottom top',
-        scrub: 0.5,
-      },
-    })
-    .to('.welcome-text-namegroup', {
-      x: '100vw',
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-    })
-    .to(
-      '.welcome-text-career',
+    const defaultDuration = 1.5;
+    const defaultEase = 'power3.out';
+  
+    const animateOnScroll = (selector, transformX) => {
+    gsap.fromTo(selector, 
       {
-        x: '-100vw',
         opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
+        x: transformX,
       },
-      0.2,
-    )
+      {
+        opacity: 1,
+        x: 0,
+        duration: defaultDuration,
+        ease: defaultEase,
+        scrollTrigger: {
+          trigger: selector,
+          start: 'top 80%',
+          end: 'top 20%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  };
 
-  //about-me-section : enter animation
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-about-me',
-        start: 'top bottom',
-        end: 'top 20%',
-        scrub: 0.5,
-      },
-    })
-    .from(
-      '.about-me-description > *',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.2,
-      },
-      0,
-    )
-    .from(
-      '.about-me-image-group > *',
-      {
-        x: '100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.4,
-      },
-      0,
-    )
-
-  // about-me-section : exit animation
-
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-about-me',
-        start: 'bottom 80%',
-        end: 'bottom-=20% top',
-        scrub: 1,
-      },
-    })
-    .to(
-      '.about-me-description > *',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.in',
-        stagger: 0.2,
-      },
-      0,
-    )
-    .to(
-      '.about-me-image-group > *',
-      {
-        x: '100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.in',
-        stagger: 0.4,
-      },
-      0,
-    )
-
-    // works section: enter animation
-    gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-works',
-        start: 'top 70%',
-        end: 'top top',
-        scrub: 0.5,
-      },
-    })
-    .from(
-      '.works-container > *',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 1,
-      },
-      0,
-    )
-
-    // works section: exit animation
-    gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-works',
-        start: 'bottom top',
-        end: 'bottom-=20% top',
-        scrub: 0.5,
-      },
-    })
-    .from(
-      '.works-container > *',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 1,
-      },
-      0,
-    )
-})
+  animateOnScroll('.about-me-description *', '-50vw');
+  animateOnScroll('.about-me-image-group *', '50vw');
+  animateOnScroll('.works-container *', '50vw');})
 </script>
