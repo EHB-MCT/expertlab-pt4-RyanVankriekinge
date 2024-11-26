@@ -28,6 +28,18 @@
       <component :is="Component" />
     </transition>
   </router-view>
+  <div></div>
+  <footer>
+    <div class="footer-shape">
+    </div>
+    <div class="outer-wrapper">
+      <div class="wrapper">
+        <div class="footer-name">
+          <h2 class="footer-ryan">Ryan</h2>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script setup>
