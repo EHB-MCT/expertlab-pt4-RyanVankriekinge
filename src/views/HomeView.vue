@@ -58,7 +58,7 @@
           </div>
           <div class="about-me-image-group">
             <div class="about-me-image-container">
-              <img v-lazy="'/assets/img/ryanvankriekinge.png'" alt="Ryan Vankriekinge">
+              <img src="../assets/img/ryanvankriekinge.png" loading="lazy"/>
             </div>
             <div class="about-me-shape"></div>
           </div>
