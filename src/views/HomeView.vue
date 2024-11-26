@@ -79,38 +79,40 @@
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import WorksCarousel from '@/components/WorksCarousel.vue';
+import WorksCarousel from '@/components/WorksCarousel.vue'
 
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
+  const defaultDuration = 1.5
+  const defaultEase = 'power3.out'
+
   const tl = gsap.timeline()
   tl.from('.name-svg', {
     x: '50vw',
     opacity: 0,
-    duration: 1.5,
-    ease: 'power3.out',
+    duration: defaultDuration,
+    ease: defaultEase,
   })
     .to({}, {})
     .from('.welcome-text-name', {
       x: '20vw',
       opacity: 0,
-      duration: 1.5,
-      ease: 'power3.out',
+      duration: defaultDuration,
+      ease: defaultEase,
     })
     .to({}, { duration: 0.5 })
     .from(['.function-svg', '.jobtitle'], {
       x: '-50vw',
       opacity: 0,
-      duration: 1.5,
-      ease: 'power3.out',
+      duration: defaultDuration,
+      ease: defaultEase,
       stagger: 0,
     })
-    const defaultDuration = 1.5;
-    const defaultEase = 'power3.out';
-  
-    const animateOnScroll = (selector, transformX) => {
-    gsap.fromTo(selector, 
+
+  const animateOnScroll = (selector, transformX) => {
+    gsap.fromTo(
+      selector,
       {
         opacity: 0,
         x: transformX,
@@ -122,16 +124,16 @@ onMounted(() => {
         ease: defaultEase,
         scrollTrigger: {
           trigger: selector,
-          start: 'top 80%',
+          start: 'top 90%',
           end: 'top 20%',
           toggleActions: 'play none none none',
-          lazy: true,
+          immediateRender: true,
         },
       }
-    );
-  };
+    )
+  }
 
-  animateOnScroll('.about-me-description *', '-50vw');
-  animateOnScroll('.about-me-image-group *', '50vw');
-  animateOnScroll('.works-container *', '50vw');})
+  animateOnScroll('.section-about-me *', '50vw')
+  animateOnScroll('.works-container *', '-50vw')
+})
 </script>
