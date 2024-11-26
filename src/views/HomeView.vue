@@ -58,7 +58,7 @@
           </div>
           <div class="about-me-image-group">
             <div class="about-me-image-container">
-              <img src="../assets/img/ryanvankriekinge.png" />
+              <img src="../assets/img/ryanvankriekinge.png" loading="lazy"/>
             </div>
             <div class="about-me-shape"></div>
           </div>
@@ -125,6 +125,7 @@ onMounted(() => {
           start: 'top 80%',
           end: 'top 20%',
           toggleActions: 'play none none none',
+          lazy: true,
         },
       }
     );
