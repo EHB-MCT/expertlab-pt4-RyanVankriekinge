@@ -5,9 +5,15 @@
 @import './carousel.css';
 @import './footer.css';
 
-/* Font imports */
 @import url('https://fonts.cdnfonts.com/css/agency-fb');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('https://fonts.gstatic.com/s/bebasneue/v12/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 #app{
   height: fit-content;
