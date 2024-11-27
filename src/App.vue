@@ -45,7 +45,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
-import { useRoute } from 'vue-router'
 import HamburgerMenu from './components/HamburgerMenu.vue'
 
 const menuActive = ref(false)
