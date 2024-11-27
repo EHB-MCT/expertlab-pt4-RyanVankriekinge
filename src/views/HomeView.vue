@@ -83,6 +83,19 @@ import WorksCarousel from '@/components/WorksCarousel.vue'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const throttle = (callback, limit) => {
+  let waiting = false
+  return function (...args) {
+    if (!waiting) {
+      callback.apply(this, args)
+      waiting = true
+      setTimeout(() => {
+        waiting = false
+      }, limit)
+    }
+  }
+}
+
 onMounted(() => {
   const defaultDuration = 1.5
   const defaultEase = 'power3.out'
@@ -93,7 +106,10 @@ onMounted(() => {
     .from('.welcome-text-name', { x: '20vw', opacity: 0 }, '+=0.5')
     .from(['.function-svg', '.jobtitle'], { x: '-50vw', opacity: 0, stagger: 0 })
 
-
+  const throttledUpdate = throttle(() => {
+    console.log('ScrollTrigger update throttled')
+  }, 200)
+  
   const animateOnScroll = (selector, transformX) => {
     gsap.fromTo(
       selector,
@@ -112,6 +128,7 @@ onMounted(() => {
           end: 'top 20%',
           toggleActions: 'play none none none',
           immediateRender: true,
+          onUpdate: throttledUpdate,
         },
       }
     )
