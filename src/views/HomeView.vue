@@ -34,7 +34,7 @@
             <div class="welcome-text-skills"></div>
           </div>
         </div>
-        <div class="section-about-me">
+        <div class="section-about-me hidden">
           <div class="about-me-description">
             <h2 class="title">About me</h2>
             <p>
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="section-works">
-          <div class="works-container">
+          <div class="works-container hidden">
             <h2 class="title">My works</h2>
             <WorksCarousel></WorksCarousel>
             <button class="button-small" style="margin: auto; width: 140px;">All my works</button>
@@ -109,6 +109,12 @@ const loadPrimaryAnimations = async () => {
     .play()
 }
 
+const revealHiddenItemsAfterLoading = () => {
+  document.querySelectorAll('.hidden').forEach((element) => {
+    element.classList.remove('hidden');
+  });
+}
+
 const deferAnimations = () => {
   const defaultDuration = 1.5
   const defaultEase = 'power3.out'
@@ -147,6 +153,7 @@ const deferAnimations = () => {
 
 onMounted(async () => {
   await loadPrimaryAnimations()
+  revealHiddenItemsAfterLoading()
   deferAnimations() 
 })
 </script>
