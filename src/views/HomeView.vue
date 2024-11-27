@@ -76,10 +76,13 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, defineAsyncComponent } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import WorksCarousel from '@/components/WorksCarousel.vue'
+
+const WorksCarousel = defineAsyncComponent(() =>
+  import('@/components/WorksCarousel.vue')
+);
 
 gsap.registerPlugin(ScrollTrigger)
 
