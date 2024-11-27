@@ -1,6 +1,6 @@
 # Dynamic Transitions Portfolio
 
-This project is a personal portfolio that uses web animations and transitions.
+This project is a personal portfolio that uses web animations and transitions. This project is also used to investigate how to improve the page speed of a web page.
 
 ## Project set-up guide
 
@@ -24,6 +24,12 @@ To install the dependencies, run the following command <br> `npm install`
 
 To start the development server, run <br>
 `npm run dev`
+
+To build server for production (import for minifying, compression, etc.) run <br>
+`npm run build`
+
+To view the website run <br>
+`npm run serve`
 
 ## Linting and formatting
 
@@ -82,3 +88,6 @@ To fix formatting issues, run: <br>
 
 16. **Debouncing in JavaScript**  
     Used [Debounce - How to delay function in JavaScript](https://www.freecodecamp.org/news/javascript-debounce-example/) to debounce buttons in src > views > HomeView.vue
+
+17. **Compressing text files**  
+    Used [Vite plugin compression](https://github.com/vbenjs/vite-plugin-compression) to compress text files
