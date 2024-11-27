@@ -94,7 +94,9 @@ svg {
 }
 
 .about-me-image-group img {
+  aspect-ratio: 1/1;
   width: 50%;
+  height: auto;
   box-sizing: border-box;
   margin-top: 40px;
   object-fit: cover;
