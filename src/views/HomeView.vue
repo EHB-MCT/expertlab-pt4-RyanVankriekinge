@@ -34,7 +34,7 @@
             <div class="welcome-text-skills"></div>
           </div>
         </div>
-        <div class="section-about-me">
+        <div class="section-about-me hidden">
           <div class="about-me-description">
             <h2 class="title">About me</h2>
             <p>
@@ -58,13 +58,13 @@
           </div>
           <div class="about-me-image-group">
             <div class="about-me-image-container">
-              <img src="../assets/img/ryanvankriekinge.png" />
+              <img src="../assets/img/ryanvankriekinge.png" loading="lazy"/>
             </div>
             <div class="about-me-shape"></div>
           </div>
         </div>
         <div class="section-works">
-          <div class="works-container">
+          <div class="works-container hidden">
             <h2 class="title">My works</h2>
             <WorksCarousel></WorksCarousel>
             <button class="button-small" style="margin: auto; width: 140px;">All my works</button>
@@ -76,175 +76,87 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, defineAsyncComponent } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import WorksCarousel from '@/components/WorksCarousel.vue';
+
+const WorksCarousel = defineAsyncComponent(() =>
+  import('@/components/WorksCarousel.vue')
+);
 
 gsap.registerPlugin(ScrollTrigger)
 
-onMounted(() => {
-  const tl = gsap.timeline()
-  // initial animation welcome section
-  tl.from('.name-svg', {
-    x: '100vw',
-    duration: 1.5,
-    ease: 'power3.out',
-  })
-    .to({}, {})
-    .from('.welcome-text-name', {
-      x: '20vw',
-      opacity: 0,
-      duration: 1.5,
-      ease: 'power3.out',
-    })
-    .to({}, { duration: 0.5 })
-    .from(['.function-svg', '.jobtitle'], {
-      x: '-100vw',
-      opacity: 0,
-      duration: 1.5,
-      ease: 'power3.out',
-      stagger: 0,
-    })
+const throttle = (callback, limit) => {
+  let waiting = false
+  return function (...args) {
+    if (!waiting) {
+      callback.apply(this, args)
+      waiting = true
+      setTimeout(() => {
+        waiting = false
+      }, limit)
+    }
+  }
+}
 
-  // scroll triggered animations
+const loadPrimaryAnimations = async () => {
+  const defaultDuration = 1.5
+  const defaultEase = 'power3.out'
 
-  // welcome section
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-welcome',
-        start: 'bottom 80%',
-        end: 'bottom top',
-        scrub: 0.5,
-      },
-    })
-    .to('.welcome-text-namegroup', {
-      x: '100vw',
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-    })
-    .to(
-      '.welcome-text-career',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-      },
-      0.2,
-    )
+  const tl = gsap.timeline({ defaults: { duration: defaultDuration, ease: defaultEase } })
 
-  //about-me-section : enter animation
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-about-me',
-        start: 'top bottom',
-        end: 'top 20%',
-        scrub: 0.5,
-      },
-    })
-    .from(
-      '.about-me-description > *',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.2,
-      },
-      0,
-    )
-    .from(
-      '.about-me-image-group > *',
-      {
-        x: '100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.4,
-      },
-      0,
-    )
+  await tl
+    .from('.name-svg', { x: '50vw', opacity: 0 })
+    .from('.welcome-text-name', { x: '20vw', opacity: 0 }, '+=0.5')
+    .from(['.function-svg', '.jobtitle'], { x: '-50vw', opacity: 0, stagger: 0 })
+    .play()
+}
 
-  // about-me-section : exit animation
+const revealHiddenItemsAfterLoading = () => {
+  document.querySelectorAll('.hidden').forEach((element) => {
+    element.classList.remove('hidden');
+  });
+}
 
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-about-me',
-        start: 'bottom 80%',
-        end: 'bottom-=20% top',
-        scrub: 1,
-      },
-    })
-    .to(
-      '.about-me-description > *',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.in',
-        stagger: 0.2,
-      },
-      0,
-    )
-    .to(
-      '.about-me-image-group > *',
-      {
-        x: '100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.in',
-        stagger: 0.4,
-      },
-      0,
-    )
+const deferAnimations = () => {
+  const defaultDuration = 1.5
+  const defaultEase = 'power3.out'
 
-    // works section: enter animation
-    gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-works',
-        start: 'top 70%',
-        end: 'top top',
-        scrub: 0.5,
-      },
-    })
-    .from(
-      '.works-container > *',
-      {
-        x: '-100vw',
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 1,
-      },
-      0,
-    )
+  const throttledUpdate = throttle(() => {
+    console.log('ScrollTrigger update throttled')
+  }, 200)
 
-    // works section: exit animation
-    gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.section-works',
-        start: 'bottom top',
-        end: 'bottom-=20% top',
-        scrub: 0.5,
-      },
-    })
-    .from(
-      '.works-container > *',
+  const animateOnScroll = (selector, transformX) => {
+    gsap.fromTo(
+      selector,
       {
-        x: '-100vw',
         opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 1,
+        x: transformX,
       },
-      0,
+      {
+        opacity: 1,
+        x: 0,
+        duration: defaultDuration,
+        ease: defaultEase,
+        scrollTrigger: {
+          trigger: selector,
+          start: 'top 90%',
+          end: 'top 20%',
+          toggleActions: 'play none none none',
+          immediateRender: true,
+          onUpdate: throttledUpdate,
+        },
+      }
     )
+  }
+
+  animateOnScroll('.section-about-me *', '50vw')
+  animateOnScroll('.works-container *', '-50vw')
+}
+
+onMounted(async () => {
+  await loadPrimaryAnimations()
+  revealHiddenItemsAfterLoading()
+  deferAnimations() 
 })
 </script>

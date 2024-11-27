@@ -5,7 +5,7 @@ svg {
 
 .section-welcome {
   top: 0;
-  height: 90vh;
+  height: 100vh;
   min-height: 640px;
   position: relative;
 }
@@ -122,7 +122,7 @@ svg {
 }
 
 .section-works{
-  height: 90vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   width: 100%;
