@@ -81,6 +81,11 @@ p {
   background-color: #8a75ad;
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 @media (min-width: 641px) {
   #app {
     padding: 2rem 6rem;
