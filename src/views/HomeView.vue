@@ -76,20 +76,30 @@
 </template>
 
 <script setup>
-import { onMounted, defineAsyncComponent } from 'vue'
-import { useRouter } from 'vue-router'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onMounted, defineAsyncComponent } from 'vue';
+import { useRouter } from 'vue-router';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const router = useRouter();
 
-const navigateToAbout = () => {
-  router.push({ name: 'AboutView' });
+const debounce = (func, delay) => {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
 };
 
-const navigateToWorks = () => {
-  router.push({ name: 'WorksView' });
-};
+const navigateToAbout = debounce(() => {
+  router.push({ name: 'about' });
+}, 300);
+
+const navigateToWorks = debounce(() => {
+  router.push({ name: 'works' });
+}, 300);
 
 const WorksCarousel = defineAsyncComponent(() =>
   import('@/components/WorksCarousel.vue')
