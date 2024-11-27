@@ -79,3 +79,6 @@ To fix formatting issues, run: <br>
 
 15. **Vue3 Carousel**  
     Used [Vue3-carousel: For your next awesome project](https://vue3-carousel.ismail9k.com/) to create a carousel for my works in src > components > WorksCarousel.vue
+
+16. **Debouncing in JavaScript**  
+    Used [Debounce - How to delay function in JavaScript](https://www.freecodecamp.org/news/javascript-debounce-example/) to debounce buttons in src > views > HomeView.vue

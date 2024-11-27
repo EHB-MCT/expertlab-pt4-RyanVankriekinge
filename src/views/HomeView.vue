@@ -54,7 +54,7 @@
               audience. With my drive and eagerness to learn, I am convinced that I can be a
               valuable addition to any team.
             </p>
-            <button class="button-small">More about me</button>
+            <button class="button-small" @click="navigateToAbout">More about me</button>
           </div>
           <div class="about-me-image-group">
             <div class="about-me-image-container">
@@ -67,7 +67,7 @@
           <div class="works-container hidden">
             <h2 class="title">My works</h2>
             <WorksCarousel></WorksCarousel>
-            <button class="button-small" style="margin: auto; width: 140px;">All my works</button>
+            <button class="button-small" @click="navigateToWorks" style="margin: auto; width: 140px;">All my works</button>
           </div>
         </div>
       </div>
@@ -76,55 +76,76 @@
 </template>
 
 <script setup>
-import { onMounted, defineAsyncComponent } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onMounted, defineAsyncComponent } from 'vue';
+import { useRouter } from 'vue-router';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+const router = useRouter();
+
+const debounce = (func, delay) => {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+};
+
+const navigateToAbout = debounce(() => {
+  router.push({ name: 'about' });
+}, 300);
+
+const navigateToWorks = debounce(() => {
+  router.push({ name: 'works' });
+}, 300);
 
 const WorksCarousel = defineAsyncComponent(() =>
   import('@/components/WorksCarousel.vue')
 );
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const throttle = (callback, limit) => {
-  let waiting = false
+  let waiting = false;
   return function (...args) {
     if (!waiting) {
-      callback.apply(this, args)
-      waiting = true
+      callback.apply(this, args);
+      waiting = true;
       setTimeout(() => {
-        waiting = false
-      }, limit)
+        waiting = false;
+      }, limit);
     }
-  }
-}
+  };
+};
 
 const loadPrimaryAnimations = async () => {
-  const defaultDuration = 1.5
-  const defaultEase = 'power3.out'
+  const defaultDuration = 1.5;
+  const defaultEase = 'power3.out';
 
-  const tl = gsap.timeline({ defaults: { duration: defaultDuration, ease: defaultEase } })
+  const tl = gsap.timeline({ defaults: { duration: defaultDuration, ease: defaultEase } });
 
   await tl
     .from('.name-svg', { x: '50vw', opacity: 0 })
     .from('.welcome-text-name', { x: '20vw', opacity: 0 }, '+=0.5')
     .from(['.function-svg', '.jobtitle'], { x: '-50vw', opacity: 0, stagger: 0 })
-    .play()
-}
+    .play();
+};
 
 const revealHiddenItemsAfterLoading = () => {
   document.querySelectorAll('.hidden').forEach((element) => {
     element.classList.remove('hidden');
   });
-}
+};
 
 const deferAnimations = () => {
-  const defaultDuration = 1.5
-  const defaultEase = 'power3.out'
+  const defaultDuration = 1.5;
+  const defaultEase = 'power3.out';
 
   const throttledUpdate = throttle(() => {
-    console.log('ScrollTrigger update throttled')
-  }, 200)
+    console.log('ScrollTrigger update throttled');
+  }, 200);
 
   const animateOnScroll = (selector, transformX) => {
     gsap.fromTo(
@@ -147,16 +168,16 @@ const deferAnimations = () => {
           onUpdate: throttledUpdate,
         },
       }
-    )
-  }
+    );
+  };
 
-  animateOnScroll('.section-about-me *', '50vw')
-  animateOnScroll('.works-container *', '-50vw')
-}
+  animateOnScroll('.section-about-me *', '50vw');
+  animateOnScroll('.works-container *', '-50vw');
+};
 
 onMounted(async () => {
-  await loadPrimaryAnimations()
-  revealHiddenItemsAfterLoading()
-  deferAnimations() 
-})
+  await loadPrimaryAnimations();
+  revealHiddenItemsAfterLoading();
+  deferAnimations();
+});
 </script>
