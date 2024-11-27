@@ -96,20 +96,27 @@ const throttle = (callback, limit) => {
   }
 }
 
-onMounted(() => {
+const loadPrimaryAnimations = async () => {
   const defaultDuration = 1.5
   const defaultEase = 'power3.out'
 
   const tl = gsap.timeline({ defaults: { duration: defaultDuration, ease: defaultEase } })
 
-  tl.from('.name-svg', { x: '50vw', opacity: 0 })
+  await tl
+    .from('.name-svg', { x: '50vw', opacity: 0 })
     .from('.welcome-text-name', { x: '20vw', opacity: 0 }, '+=0.5')
     .from(['.function-svg', '.jobtitle'], { x: '-50vw', opacity: 0, stagger: 0 })
+    .play()
+}
+
+const deferAnimations = () => {
+  const defaultDuration = 1.5
+  const defaultEase = 'power3.out'
 
   const throttledUpdate = throttle(() => {
     console.log('ScrollTrigger update throttled')
   }, 200)
-  
+
   const animateOnScroll = (selector, transformX) => {
     gsap.fromTo(
       selector,
@@ -136,5 +143,10 @@ onMounted(() => {
 
   animateOnScroll('.section-about-me *', '50vw')
   animateOnScroll('.works-container *', '-50vw')
+}
+
+onMounted(async () => {
+  await loadPrimaryAnimations()
+  deferAnimations() 
 })
 </script>
