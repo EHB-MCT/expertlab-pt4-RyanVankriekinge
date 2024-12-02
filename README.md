@@ -82,3 +82,6 @@ To fix formatting issues, run: <br>
 
 16. **Debouncing in JavaScript**  
     Used [Debounce - How to delay function in JavaScript](https://www.freecodecamp.org/news/javascript-debounce-example/) to debounce buttons in src > views > HomeView.vue
+
+17. **Preloading**  
+    Used [mdn web docs: rel=preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload) to preload fonts in index.html

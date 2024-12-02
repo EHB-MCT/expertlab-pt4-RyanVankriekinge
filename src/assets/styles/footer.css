@@ -1,5 +1,6 @@
 footer {
     height: fit-content;
+    min-height: 100px;
     width: 100%;
     position: relative;
     z-index: 2;
